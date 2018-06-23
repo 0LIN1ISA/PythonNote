@@ -74,3 +74,40 @@ print(b.bit_length())
 repr格式：默认的交互模式回显，产生的结果看起来他们就像是代码。
 str格式：打印语句，转换成对用户更加友好的格式。
 """
+
+# 数字相关的模块
+# math模块
+# Decimal模块:小数模块
+import decimal
+from decimal import Decimal
+
+Decimal('0.01') + Decimal('0.02')  # 返回Decimal('0.03')
+decimal.getcontext().prec = 4  # 设置全局精度为4，即小数点后边为4位
+print(Decimal('0.01') + Decimal('0.02'))
+# Fraction模块：分数模块
+from fractions import Fraction
+
+x = Fraction(4, 6)  # 分数类型 4/6
+print(x)
+x = Fraction('0.25')  # 分数类型 1/4 接受字符串类型参数
+print(x)
+
+# 集合set
+"""
+set是一个无序不重复元素集，基本功能包括关系测试和消除重复元素。
+set支持union（联合），intersection（交），difference（差）和symmetric difference（对称差集）等数学运算。
+set支持x in set，len(set)，for x in set等操作。
+set不记录元素位置或者插入点，因此不支持indexing，slicing，或其他类序列的操作。
+"""
+
+s = set([3, 5, 9, 10])  # 创建一个数值集合，返回{3,5,9,10}
+t = set("Hello")  # 创建一个唯一字符的集合返回{'l', 'H', 'e', 'o'}
+
+a = t | s
+a = t.union(s)  # t和s的并集
+
+b = t & s
+b = t.intersection(s)  # t和s的交集
+
+c = t - s
+c = t.difference(s)  # 求差集（项在t中，但不在s中）
